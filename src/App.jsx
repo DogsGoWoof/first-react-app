@@ -1,23 +1,41 @@
 // src/App.jsx
 
-// const App = () => {
-
-//   return (
-//     <h1>Hello, world!</h1>
-//   );
-// };
-
-// export default App;
-
 const App = () => {
+
+  const todo = { text: 'A brand new task', done: true }
+  const todos = [
+    {text: 'Learn JavaScript', done: true},
+    {text: 'Learn JSX', done: false},
+    {text: 'Learn HTML', done: true},
+    {text: 'Learn CSS', done: true},
+    {text: 'Master React', done: false},
+  ];
+
+  // const todoList = todos.map((todo, index) =>
+  //   todo.done ? <li key={ index }>Task Completed: { todo.text }</li> : <li key={ index }>{ todo.text }</li>
+  // )
+
+
   return (
     <>
-      <h1>Hello World!</h1>
-      <h1>Second</h1>
+      <h1>JavaScript in JSX</h1>
+      <p>{ todo.text }</p>
+
+      <h2>Conditional Rendering</h2>
+      <p>{ todo.done ? `Task Completed: ${ todo.text }` : text.todo }</p>
+
+      <h2>Looping with JSX</h2>
       <ul>
-        <li>first item</li>
+        {/* {todos.map((todo, index) =>
+          todo.done ? <li key={ index }>Task Completed: { todo.text }</li> : <li key={ index }>{ todo.text }</li>
+        )} */}
+        {/* { todoList } */}
+        { todos.map(( todo, index ) => 
+        <li key={ index }>
+          { todo.done ? `Task Completed: ${ todo.text }` : todo.text } 
+        </li>
+          )}
       </ul>
-      <hr />
     </>
   );
 };
